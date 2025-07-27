@@ -58,3 +58,18 @@ contato_id int,
 FOREIGN KEY (contato_id) REFERENCES contato(id)
 );
 
+SELECT * FROM clientes AS c
+JOIN endereco AS e ON e.id = c.endereco_id
+JOIN contato AS cc ON cc.id = c.contato_id;
+
+SELECT
+  c.id AS cliente_id,
+  c.name AS cliente_nome,
+  e.rua,
+  e.numero,
+  e.complemento,
+  cc.name AS contato_nome,
+  cc.telefone
+FROM clientes AS c
+JOIN endereco AS e ON e.id = c.endereco_id
+JOIN contato AS cc ON cc.id = c.contato_id;
